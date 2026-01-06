@@ -10,7 +10,7 @@
     <%-include("./partials/nav") %>
 
         <div class="container">
-            <form action="/user/Signup" method="post">
+            <form action="/user/signup" method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-4">
                     <div class="mb-3 w-25">
                     <label for="exampleInputPassword1" class="form-label">Full Name</label>
@@ -23,6 +23,10 @@
                 <div class="mb-3 w-25">
                     <label for="exampleInputPassword1" class="form-label" >Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+                <div class="mb-3 w-25">
+                    <label for="profileImage" class="form-label">Profile Image</label>
+                    <input type="file" class="form-control" id="profileImage" name="profileImage" accept="image/*">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

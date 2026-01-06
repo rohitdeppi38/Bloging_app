@@ -23,8 +23,9 @@ router.post("/signup",async (req,res)=>{
     return res.redirect('/');
     }catch(error){
         console.log(error);
-        res.render("signup",{error:"Email already Exists"});
-
+        console.log(req.headersSent);
+        return res.render("signup",{error:"Email already Exists"});
+        
     }
 })
 
@@ -40,6 +41,10 @@ router.post("/signin",async (req,res)=>{
         });
 
     }
+})
+
+router.get("/logout",(req,res)=>{
+    return res.clearCookie("token").redirect("/");
 })
 
 module.exports = router;
